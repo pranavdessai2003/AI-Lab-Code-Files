@@ -47,9 +47,9 @@ def water_jug_problem(capacity_jug1, capacity_jug2, target):
     
     return None 
 
-jug1_capacity = 4
-jug2_capacity = 3
-target_amount = (2, 0)
+jug1_capacity = int(input("Enter Jug1 capacity: "))
+jug2_capacity = int(input("Enter Jug1 capacity: "))
+target_amount = tuple(map(int, input('Enter the Target state: ').split()))
 steps = water_jug_problem(jug1_capacity, jug2_capacity, target_amount)
 if steps:
     print(f"Steps to measure {target_amount} with the given jugs:")

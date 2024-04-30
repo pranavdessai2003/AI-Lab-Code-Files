@@ -1,5 +1,6 @@
+import time as t
 
-initial_state = (1, 2, 3, 4, 6, 5, 0, 7, 8)
+initial_state = (1, 2, 3, 4, 5, 6, 0, 7, 8)
 goal_state = (1, 2, 3, 4, 5, 6, 7, 8, 0)
 
 moves = {
@@ -49,12 +50,15 @@ def hill_climbing(initial_state):
         print_puzzle(current_state)
         print("heuristic Value: ")
         print(heuristic(current_state))
+        print()
 
         if current_state == goal_state:
             print("Reached the goal state.")
             return path
         
         neighbors = []
+        print("applying moves...")
+        t.sleep(2)
         for move in movement_constraints[current_state.index(0)]:
             new_state = apply_move(current_state, move)
             if new_state:
